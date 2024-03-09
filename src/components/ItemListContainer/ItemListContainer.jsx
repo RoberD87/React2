@@ -1,50 +1,45 @@
-import {useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList';
-import '../ItemList//itemList.css'
+import '../../css/itemList.css'
 import { useParams } from 'react-router-dom';
+import { db } from '../../firebase/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 const ItemListContainer = () => {
-
-    const [productos,setProductos] = useState([]);
-
-    const {categoryId} = useParams()
-
-    useEffect(()=>{
-        
-        const fetchData = async () => {
-            try {
-                const response = await fetch("https://fakestoreapi.com/products");
-                const data = await response.json()
-
-                if(categoryId){
-                    const filteredProducts = data.filter((p) => p.category == categoryId)
-                    setProductos(filteredProducts)
-                }else{
-                    setProductos(data)
-                }
-  
-            }catch(error){
-                console.log("Error en el fetch "+error)
-            }
-        }
-
-        fetchData()
-
-    },[categoryId])
-
-
+  const [productos, setProductos] = useState([]);
+  const { categoryId } = useParams()
+  useEffect(() => {
+    const misProductos =
+      categoryId ?
+        query(collection(db, "producto"), where("categoria", "==", categoryId))
+        :
+        query(collection(db, "producto"), where("destacado", "==", "si"))
+    getDocs(misProductos)
+      .then((res) => {
+        const nuevosProductos = res.docs.map((doc) => {
+          const data = doc.data()
+          return { id: doc.id, ...data }
+        })
+        setProductos(nuevosProductos)
+      })
+      .catch((error) => console.log(error))
+  }, [categoryId])
   return (
-    <div className='itemcontainer'>
-
-        {productos.length == 0 
-        ? 
-        <h1><img src="../assets/img/loader.gif" alt="" /> CARGANDO..</h1> 
-        : 
-        <ItemList productos={productos}/>
-        }
-
+    <>
+    {
+    categoryId ? 
+      null
+    :
+      <div className='banner'>
+        <img src="../assets/img/banner.webp" alt="" />
+        <hr />
+        <h2>Productos destacados</h2>
+      </div>
+    }
+    <div className='contenedor'>
+      {productos.length == 0 ? (<h1>CARGANDO..</h1>) : (<ItemList productos={productos} />)}
     </div>
+    </>
   )
 }
-
 export default ItemListContainer

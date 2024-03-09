@@ -1,8 +1,11 @@
-# React + Vite
+DESCRIPCIÓN
+El desarollo se traduce en una webapp que posibilita compras de productos en una tienda online. Se puede filtrar por categorías y navegar por los productos. Al clickear alguno, el sitio muesta información detallada del mismo y posibilita agregar el ítem al carro de compras.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TECNOLOGÍA
+Desarrollado en React + Vite + Firebase
 
-Currently, two official plugins are available:
+COPYRIGHT
+Las imágenes y descripciones fueron tomadas de la tienda online www.devre.la por lo que dicho contenido les pertenece.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+DESARROLLADOR
+Roberto Dorado

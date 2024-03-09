@@ -1,0 +1,131 @@
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.producto {
+    width: 250px;
+    margin: 35px 15px;
+    text-align: center;
+
+}
+
+.producto img {
+    width: 250px;
+    height: auto;
+}
+
+.producto h2 {
+    font-size: 1em;
+}
+
+.producto p {
+    font-size: .9em;
+    background-color: gray;
+    color: white;
+    width: min-content;
+    margin: auto;
+    padding: 10px;
+}
+
+.banner {
+    margin: 30px 0px;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+hr{
+    width: 40%;
+    margin: 50px auto;
+}
+.contenedor-prod{
+    display: flex;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contenedor-prod img{
+    width:350px;
+    height: auto;
+}
+.detalles{
+    width: 700px;
+    margin: 30px;
+}
+.boton{
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.seleccionar{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+.cantidad{
+    font-size: 2em;
+    margin: 0px 20px;
+}
+.agregar{
+    font-size: 1.5em;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 30px;
+}
+.linea-prod{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.linea-prod img{
+    width: 80px;
+    height: auto;
+}
+.contenedor.resumen{
+    display: block;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tacho{
+    width: 25px!important;
+    height: auto!important;
+}
+.total{
+    padding:10px;
+    border: 1px solid black;
+    font-size: 1.5em;
+    float: right;
+}
+.final{
+    width: 100%;
+    clear: both;
+    text-align: center;
+    margin-top: 70px;
+}
+form{
+    width:700px;
+    margin:auto
+}
+input{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
